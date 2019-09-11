@@ -1,0 +1,37 @@
+{% extends 'blog/base.html' %}
+{% block content %}
+  <div class="row">
+    {% for p in pubs %}
+    <div class="col-md-6">
+      <div class="blog-entry ftco-animate">
+        <a href="blog-single.html" class="blog-image">
+          <img src="images/image_4.jpg" class="img-fluid" alt="">
+        </a>
+        <div class="text py-4">
+          <div class="meta">
+            <div><a href="#">{{ p.fecha_publicacion|date:'M d, Y' }}</a></div>
+            <div><a href="#">{{ p.autor }}</a></div>
+          </div>
+          <h3 class="heading"><a href="#">{{ p }}</a></h3>
+          <p>{{ p.texto|slice:":140" }}...</p>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+
+  </div>
+  <div class="row mt-5">
+    <div class="col text-center">
+      <div class="block-27">
+        <ul>
+          <li><a href="#">&lt;</a></li>
+          <li class="active"><span>1</span></li>
+          <li><a href="#">2</a></li>
+
+          <li><a href="#">&gt;</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  {% endblock %}
