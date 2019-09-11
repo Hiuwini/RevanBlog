@@ -4,15 +4,15 @@
     {% for p in pubs %}
     <div class="col-md-6">
       <div class="blog-entry ftco-animate">
-        <a href="blog-single.html" class="blog-image">
+        <a href="#" class="blog-image">
           <img src="images/image_4.jpg" class="img-fluid" alt="">
         </a>
         <div class="text py-4">
           <div class="meta">
-            <div><a href="#">{{ p.fecha_publicacion|date:'M d, Y' }}</a></div>
-            <div><a href="#">{{ p.autor }}</a></div>
+            <div><a href="{% url 'post_detail' pk=p.pk %}">{{ p.fecha_publicacion|date:'M d, Y' }}</a></div>
+            <div><a href="{% url 'post_detail' pk=p.pk %}">{{ p.autor }}</a></div>
           </div>
-          <h3 class="heading"><a href="#">{{ p }}</a></h3>
+          <h3 class="heading"><a href="{% url 'post_detail' pk=p.pk %}">{{ p }}</a></h3>
           <p>{{ p.texto|slice:":140" }}...</p>
         </div>
       </div>
